@@ -1,0 +1,66 @@
+<div class="container">
+    <h2><a routerLink="/">Grocery App</a></h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="wrapper">
+                <div class="alert {{RegisterClass}} text-center" role="alert">
+                    {{ RegisterResponse }}
+                </div>
+                <h2 class="text-center">Register</h2>
+                <hr>    
+                <form #registerForm="ngForm" (submit)="FormSubmit()">    <!-- Template driven form -->       
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input #firstName="ngModel" type="text" name="firstName" id="firstName" class="form-control"
+                        [(ngModel)]="userModel.firstName" required [class.is-invalid]="firstName.invalid && firstName.touched">
+                        <small class="text-danger" [class.d-none]="firstName.untouched || firstName.valid">This is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input #mail="ngModel" type="text" name="Email" id="email" class="form-control" 
+                        [(ngModel)]="userModel.email" required [class.is-invalid]="mail.invalid && mail.touched"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="mail.errors && mail.touched">
+                            <small class="text-danger" *ngIf="mail.errors['required']">Email is required</small>
+                            <small class="text-danger" *ngIf="mail.errors['pattern']">Email is not valid</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input #mobile="ngModel" type="text" name="mobile" id="mobile" class="form-control"
+                        [(ngModel)]="userModel.mobile" required [class.is-invalid]="mobile.invalid && mobile.touched"
+                        pattern="^\d{10}">
+                        <div *ngIf="mobile.errors && mobile.touched">
+                            <small class="text-danger" *ngIf="mobile.errors['required']">Phone number is required</small> 
+                            <small class="text-danger" *ngIf="mobile.errors['pattern']">Phone number must be of 10 digits</small> 
+                        </div>       
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input #password="ngModel" type="password" name="password" id="password" class="form-control"
+                        [(ngModel)]="userModel.password" required [class.is-invalid]="password.invalid && password.touched"
+                        minlength="6" >
+                        <div *ngIf="password.errors && password.touched">
+                            <small class="text-danger" *ngIf="password.errors['required']">Password is required</small> 
+                            <small class="text-danger" *ngIf="password.errors['minlength']">Password must be of 6 digits</small> 
+                        </div> 
+                    </div>
+
+                    <div class="last">
+                        <input type="submit" value="Register" class="btn btn-primary last" [disabled]="!registerForm.valid">
+                        <br>
+                        <label for="">Already Registered?</label><a routerLink="/login"> Click here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>

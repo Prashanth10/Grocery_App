@@ -1,0 +1,15 @@
+<div class="container wrapper">
+    <h2 class="text-center">Categories</h2>
+    <div class="row row-cols-4">
+        <div class="card col md-4" *ngFor="let category of categories">
+            <img src="{{ 'http://rjtmobile.com/grocery/images/'+category.catImage }}" class="card-img-top" alt="not found" width="200" height="200">
+            <div class="card-body content">
+                <h5 class="card-title">{{ category.title }}</h5>
+                <!-- <p class="card-text">{{ category.description }}</p> -->
+                <p class="card-text"><small class="text-info">Category: <span class="bg-secondary text-white"> {{ category.catName }}</span></small></p>
+                <p class="card-text ">Slug: <span class="text-success">{{ category.slug }}</span></p>
+                <button class="btn btn-primary" (click)="onClickHandler(category.catId)">View Category</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.wrapper{
+    background-color: white;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 2px 3px rgb(61, 142, 241);
+    margin-block: 15%;
+}
+.last{
+    text-align: center;
+    /* justify-content: center; */
+}

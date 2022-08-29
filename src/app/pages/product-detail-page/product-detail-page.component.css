@@ -1,0 +1,20 @@
+.wrapper{
+    margin-top: 70px;
+}
+.mrp{
+    font-size: 20px;
+    color: red;
+}
+img{
+    margin-block: 12%;
+}
+.prodContent{
+    background-color: rgb(130, 162, 179);
+    justify-content: center;
+    /* display:flexbox; */
+    margin-block: 10%;
+}
+.prod2{
+    padding: 4%;
+    text-align: center;
+}

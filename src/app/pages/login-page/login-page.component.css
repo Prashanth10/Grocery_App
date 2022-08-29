@@ -1,0 +1,13 @@
+.wrapper{
+    background-color: white;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 2px 3px rgb(61, 142, 241);
+    margin-block: 20%;
+}
+.last{
+    text-align: center;
+}
+alert{
+    transition-timing-function: linear;
+}

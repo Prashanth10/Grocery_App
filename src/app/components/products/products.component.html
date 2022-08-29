@@ -1,0 +1,18 @@
+<br>
+<div class="container">
+    <h2 class="text-center">Products</h2>
+    <div class="row row-cols-3 product">
+        <div class="card" *ngFor="let product of products">
+            <img src="{{ 'http://rjtmobile.com/grocery/images/'+product.image }}" class="card-img-top" alt="not found">
+            <div class="card-body content">
+                <h5 class="card-title">{{ product.productName }}</h5>
+                <!-- <p class="card-text">{{ product.description }}</p> -->
+                <p class="card-text">Price: <span class="text-success font-weight"> {{ product.price | currency:'INR'}}</span></p>
+                <p class="card-text mrp">MRP: <del class="text-danger">{{ product.mrp | currency:'INR'}}</del></p>
+                <div class="text-center"><a [routerLink]="['/products/details/',product._id]" class="btn btn-primary vertical-center">View product</a></div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- "{{ 'products/details/'+ product._id }}" -->
